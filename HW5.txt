@@ -1,0 +1,20 @@
+1. Уроки між 11:00 та 13:00
+
+SELECT teachers.first_name, teachers.last_name, lessons.name AS lesson, rooms.number AS room, classes.name AS class, rozklad.time 
+FROM rozklad 
+INNER JOIN lessons ON lessons.id=rozklad.lesson_id 
+INNER JOIN teachers ON teachers.id=rozklad.teacher_id 
+INNER JOIN rooms ON rooms.id=rozklad.room_id 
+INNER JOIN classes ON classes.id=rozklad.class_id 
+WHERE time BETWEEN "11:00:00" AND "13:00:00";
+
+
+2. Усі уроки
+
+SELECT teachers.first_name, teachers.last_name, lessons.name AS lesson, rooms.number AS room, classes.name AS class, rozklad.time 
+FROM rozklad 
+INNER JOIN lessons ON lessons.id=rozklad.lesson_id 
+INNER JOIN teachers ON teachers.id=rozklad.teacher_id 
+INNER JOIN rooms ON rooms.id=rozklad.room_id 
+INNER JOIN classes ON classes.id=rozklad.class_id;
+
